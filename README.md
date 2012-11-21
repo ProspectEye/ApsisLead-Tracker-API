@@ -122,7 +122,7 @@ Example 2: You have a login on you webpage and wants to send along this informat
 }
 ```
 
-Examples
+API Call Examples
 --------------------
 
 Standard:
