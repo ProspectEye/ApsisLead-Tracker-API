@@ -81,6 +81,47 @@ Optionals:
 
 `false` - The tracker is returned as a script-object or a iframe-object for you to append by yourself
 
+PEData
+--------------------
+PEData is optional and can be sent with the tracker-call. PEData is user-based information that is picked up from
+forms on your website.
+
+Types:
+
+ - 'F' Forms
+
+Example 1: You have a form that lets user subscribe to a newsletter. In order to send along this information to the
+tracker you extend the `jsonSettings` with the value `pedata`
+
+```
+{
+  url: 'Page Url',
+  ...
+  pedata: {
+    type: 'F',
+    email: 'info@prospecteye.com',
+    form_name: 'Newsletter'
+  }
+}
+```
+
+`type` and `form_name` is standard fields. Between those you can put almost any key-pair of string-data. In this example
+we add the data `email: 'info@prospecteye.com'
+
+Example 2: You have a login on you webpage and wants to send along this information to be able to exclude login-customers
+
+```
+{
+  url: 'Page Url',
+  ...
+  pedata: {
+    type: 'F',
+    username: 'info@prospecteye.com',
+    form_name: 'Login'
+  }
+}
+```
+
 Examples
 --------------------
 
@@ -126,7 +167,6 @@ var tracker = pe_callTracker({
 
 document.getElementsByTagName("head")[0].appendChild(tracker);
 ```
-
 
 
 
