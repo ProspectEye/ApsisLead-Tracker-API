@@ -51,9 +51,7 @@ Functions
 --------------------
 `pe_callTracker(jsonSettings, nAppendType, bShouldAppend)`
 
-`Param: jsonSettings`
-
-Standard: `{}`
+`Param: jsonSettings = {}`
 
 Optionals:
 
@@ -83,6 +81,51 @@ Optionals:
 
 `false` - The tracker is returned as a script-object or a iframe-object for you to append by yourself
 
+Examples
+--------------------
+
+Standard:
+
+`pe_callTracker({}, kPEAppendScript, true);`
+
+Custom:
+
+```
+pe_callTracker({
+  url: 'http://www.prospecteye.com/index.php',
+  pagename: 'ProspectEye Mainpage'
+}, kPEAppendScript, true);
+```
+
+Custom (with formdata):
+
+```
+pe_callTracker({
+  url: 'http://www.prospecteye.com/index.php',
+  pagename: 'ProspectEye Mainpage',
+  'pedata': {
+    'type': 'F',
+    'email': 'info@prospecteye.com',
+    'form_name': 'Newsletter'
+  }
+}, kPEAppendScript, true);
+```
+
+Custom (Append by yourself):
+
+```
+var tracker = pe_callTracker({
+  url: 'http://www.prospecteye.com/index.php',
+  pagename: 'ProspectEye Mainpage',
+  'pedata': {
+    'type': 'F',
+    'email': 'info@prospecteye.com',
+    'form_name': 'Newsletter'
+  }
+}, kPEAppendScript, false);
+
+document.getElementsByTagName("head")[0].appendChild(tracker);
+```
 
 
 
