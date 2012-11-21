@@ -13,9 +13,9 @@ ProspectEye delivers each visit with company information such as company name, t
 What is a tracker?
 --------------------
 
-Our tracker is based on Javascript front-end and PHP back-end. The tracker makes sure every pageview on your site is tracked
-on our system and then calculated as a visit. This is done by adding a script to your website-footer whick calls the tracker
-with relevant data every time a page loads.
+The tracker makes sure every pageview on your site is tracked into our system. Our system then automatically calculates X pageviews into a company-visit.
+This is done by adding a script to your website-footer which calls the tracker with relevant data every time a page loads.
+Our tracker is based on Javascript front-end and PHP/MySQL back-end.
 
 Add the script to your footer
 --------------------
@@ -34,7 +34,7 @@ Explaination
 `var psSite = "YOUR_SITE_CODE"; var psDynamicSite = true;`
 
 Be sure to put the correct Site Code in the variable `psSite` or your pageview won't be tracked correctly. If you have a dynamic
-webpage and don't want the tracker to be called automaticlly set `psDynamicSite = true`
+webpage and don't want the tracker to be called automatically set `psDynamicSite = true`
 
 `var peJsHost = (("https:" == document.location.protocol) ? "https://" : "http://");`
 
@@ -77,7 +77,7 @@ Optionals:
 
 `Param: bShouldAppend = true|false`
 
-`true` - The tracker is appended and called automaticlly
+`true` - The tracker is appended and called automatically
 
 `false` - The tracker is returned as a script-object or a iframe-object for you to append by yourself
 
@@ -92,8 +92,8 @@ Custom:
 
 ```
 pe_callTracker({
-  url: 'http://www.prospecteye.com/index.php',
-  pagename: 'ProspectEye Mainpage'
+  'url': 'http://www.prospecteye.com/index.php',
+  'pagename': 'ProspectEye Mainpage'
 }, kPEAppendScript, true);
 ```
 
@@ -101,8 +101,8 @@ Custom (with formdata):
 
 ```
 pe_callTracker({
-  url: 'http://www.prospecteye.com/index.php',
-  pagename: 'ProspectEye Mainpage',
+  'url': 'http://www.prospecteye.com/index.php',
+  'pagename': 'ProspectEye Mainpage',
   'pedata': {
     'type': 'F',
     'email': 'info@prospecteye.com',
@@ -115,8 +115,8 @@ Custom (Append by yourself):
 
 ```
 var tracker = pe_callTracker({
-  url: 'http://www.prospecteye.com/index.php',
-  pagename: 'ProspectEye Mainpage',
+  'url': 'http://www.prospecteye.com/index.php',
+  'pagename': 'ProspectEye Mainpage',
   'pedata': {
     'type': 'F',
     'email': 'info@prospecteye.com',
