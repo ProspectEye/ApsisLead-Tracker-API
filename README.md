@@ -49,7 +49,39 @@ Dynamic tracking API
 
 Functions
 --------------------
-- pe_callTracker
+`pe_callTracker(jsonSettings, nAppendType, bShouldAppend)`
+
+`Param: jsonSettings`
+
+Standard: `{}`
+
+Optionals:
+
+```
+{
+  'url': 'Page Url',        //example http://www.prospecteye.com/index.php
+  'pagename': 'Page Title', //example ProspectEye Mainpage
+  'referer': 'Referer Url', //example http://www.google.se/q=prospecteye%20ab
+  'cookie': true|false,     //example Should the tracker set a cookie or not
+  'pedata': {
+    'type': 'F',
+    'email': 'info@prospecteye.com',
+    'form_name': 'Newsletter'
+  }
+}
+```
+
+`Param: nAppendType = kPEAppendScript|kPEAppendFrame`
+
+`kPEAppendScript` - This alternative appends the tracker as a script-call
+
+`kPEAppendFrame` - This alternative appends the tracker as a 1x1-pixel IFrame
+
+`Param: bShouldAppend = true|false`
+
+`true` - The tracker is appended and called automaticlly
+
+`false` - The tracker is returned as a script-object or a iframe-object for you to append by yourself
 
 
 
