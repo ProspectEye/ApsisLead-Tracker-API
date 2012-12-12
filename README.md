@@ -49,7 +49,7 @@ Dynamic tracking API
 
 Functions
 --------------------
-`pe_callTracker(jsonSettings, nAppendType, bShouldAppend)`
+`ProspectEye.callTracker(jsonSettings, nAppendType, bShouldAppend)`
 
 `Param: jsonSettings = {}`
 
@@ -69,11 +69,11 @@ Optionals:
 }
 ```
 
-`Param: nAppendType = kPEAppendScript|kPEAppendFrame`
+`Param: nAppendType = ProspectEye.kPEAppendScript|ProspectEye.kPEAppendFrame`
 
-`kPEAppendScript` - This alternative appends the tracker as a script-call
+`ProspectEye.kPEAppendScript` - This alternative appends the tracker as a script-call
 
-`kPEAppendFrame` - This alternative appends the tracker as a 1x1-pixel IFrame
+`ProspectEye.kPEAppendFrame` - This alternative appends the tracker as a 1x1-pixel IFrame
 
 `Param: bShouldAppend = true|false`
 
@@ -127,21 +127,21 @@ API Call Examples
 
 Standard:
 
-`pe_callTracker({}, kPEAppendScript, true);`
+`ProspectEye.callTracker({}, ProspectEye.kPEAppendScript, true);`
 
 Custom:
 
 ```
-pe_callTracker({
+ProspectEye.callTracker({
   'url': 'http://www.prospecteye.com/index.php',
   'pagename': 'ProspectEye Mainpage'
-}, kPEAppendScript, true);
+}, ProspectEye.kPEAppendScript, true);
 ```
 
 Custom (with formdata):
 
 ```
-pe_callTracker({
+ProspectEye.callTracker({
   'url': 'http://www.prospecteye.com/index.php',
   'pagename': 'ProspectEye Mainpage',
   'pedata': {
@@ -149,13 +149,13 @@ pe_callTracker({
     'email': 'info@prospecteye.com',
     'form_name': 'Newsletter'
   }
-}, kPEAppendScript, true);
+}, ProspectEye.kPEAppendScript, true);
 ```
 
 Custom (Append by yourself):
 
 ```
-var tracker = pe_callTracker({
+var tracker = ProspectEye.callTracker({
   'url': 'http://www.prospecteye.com/index.php',
   'pagename': 'ProspectEye Mainpage',
   'pedata': {
@@ -163,7 +163,7 @@ var tracker = pe_callTracker({
     'email': 'info@prospecteye.com',
     'form_name': 'Newsletter'
   }
-}, kPEAppendScript, false);
+}, ProspectEye.kPEAppendScript, false);
 
 document.getElementsByTagName("head")[0].appendChild(tracker);
 ```
