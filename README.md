@@ -44,6 +44,20 @@ This code makes sure you want get any javascript warnings based on our protocol.
 
 This code adds track.js to your site and enables you to call our API.
 
+Async implementation
+--------------------
+
+```
+<script type="text/javascript">
+    var psSite = "YOUR_SITE_CODE"; var psDynamicSite = true;
+    (function() {
+        var pe = document.createElement('script'); pe.type = 'text/javascript'; pe.async = true;
+    	pe.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + "tr.prospecteye.com/track.js";
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(pe, s)
+    })();
+</script>
+```
+
 Dynamic tracking API
 ====================
 
