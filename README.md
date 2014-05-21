@@ -58,6 +58,18 @@ Async implementation
 </script>
 ```
 
+Automatic form tracking
+--------------------
+There is the possiblity to automatically track all emails written in any form on you website. To enable this contact your salesperson @ ProspectEye.
+
+In order to get a better overview of what kind of forms your visitors fill in you can give the forms a name in ProspectEye. Just add the attribute `data-formname="login"` or for exampel `data-formname="pricelist"`.
+
+This attribute must reside in the email-input of the form. Ex.
+
+```
+<input type="email" name="email" data-formname="login"/>
+```
+
 Dynamic tracking API
 ====================
 
